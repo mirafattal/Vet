@@ -1,0 +1,41 @@
+.search-bar{
+  background-color:rgb(239, 235, 244);
+
+}
+/* Add some margin to the search bar */
+input[type="text"] {
+  margin-right: 10px;
+}
+
+/* Style the placeholder text */
+::placeholder {
+  color: #a98cbe;
+}
+
+/* Add a border to the search bar when it is focused */
+input[type="text"]:focus {
+  border: 1px solid #0e0113;
+}
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 17px;
+}
+
+/* Style the search button */
+input[type="submit"] {
+  background-color: #c0a0d6;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* Add hover effect to the search button */
+input[type="submit"]:hover {
+  background-color: #b28ac4;
+}

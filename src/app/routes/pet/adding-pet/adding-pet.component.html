@@ -1,0 +1,102 @@
+<mat-dialog-content>
+<mat-stepper #stepper>
+
+  <!-- Step 1: Fill out owner details -->
+  <mat-step>
+    <form #ownerForm="ngForm">
+      <ng-template matStepLabel>Fill Owner</ng-template>
+      <div class="vertical-container">
+
+        <mat-form-field>
+          <mat-label>Owner Full Name</mat-label>
+          <input matInput [(ngModel)]="animalowner.fullName" name="fullName" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Owner Phone Number</mat-label>
+          <input matInput [(ngModel)]="animalowner.phone" name="phone" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Owner Birth Date</mat-label>
+          <input matInput [matDatepicker]="ownerBirthDatePicker"
+                 [(ngModel)]="animalowner.ownerBirthDate" name="ownerBirthDate" required />
+          <mat-datepicker-toggle matIconSuffix [for]="ownerBirthDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #ownerBirthDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput [(ngModel)]="animalowner.address" name="address" required />
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious (click)="onCancel()">Cancel</button>
+          <button mat-button matStepperNext [disabled]="!ownerForm.valid">Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Step 2: Fill out animal details -->
+  <mat-step>
+    <form #animalForm="ngForm">
+      <ng-template matStepLabel>Fill Animal</ng-template>
+      <div class="vertical-container">
+
+        <mat-form-field>
+          <mat-label>Animal Name</mat-label>
+          <input matInput [(ngModel)]="animal.animalName" name="animalName" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Animal Gender</mat-label>
+          <input matInput [(ngModel)]="animal.gender" name="gender" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Animal Birth Date</mat-label>
+          <input matInput [matDatepicker]="AnimalBirthDatePicker"
+                 [(ngModel)]="animal.animalBirthDate" name="animalBirthDate" required />
+          <mat-datepicker-toggle matIconSuffix [for]="AnimalBirthDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #AnimalBirthDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <ng-template matStepLabel>Fill Animal</ng-template>
+
+      <mat-form-field>
+        <mat-label>Animal Breed</mat-label>
+        <input matInput [(ngModel)]="animal.breed" name="breed" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Animal Type</mat-label>
+        <mat-select name="animalType" [(ngModel)]="animal.animalTypeId" required>
+          <mat-option [value]="animaltype">None</mat-option>
+          <ng-container *ngFor="let animaltype of animaltype">
+            <mat-option [value]="animaltype.animalTypeId">{{ animaltype.typeName }}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Animal Species</mat-label>
+        <input matInput [(ngModel)]="animal.species" name="species" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Animal Weight</mat-label>
+        <input matInput [(ngModel)]="animal.weight" name="weight" required />
+      </mat-form-field>
+      </div>
+
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="onSubmit()" [disabled]="!animalForm.valid">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+
+</mat-stepper>
+</mat-dialog-content>

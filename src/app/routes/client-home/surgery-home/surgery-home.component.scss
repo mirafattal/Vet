@@ -1,0 +1,125 @@
+.container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 90px 150px 800px 250px;
+
+}
+.item-0{
+  grid-column: 1/5;
+  grid-row: 1;
+  .toolbar {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fe8761;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 90px;
+
+    /* Logo Styling */
+    .logo-container {
+      display: flex;
+      align-items: center;
+
+      .logo-image {
+        width: 80px; /* Adjust the size of your logo */
+        height: 80px; /* Adjust the size of your logo */
+        margin-right: 8px; /* Add spacing between the image and the title */
+      }
+
+      .logo-title {
+        font-size: 26px;
+        font-weight: 10px;
+        color: black;
+      }
+    }
+
+    .spacer {
+      flex: 1; /* Pushes menu items to the right */
+    }
+
+    button {
+      background-color: #fe8761;
+      font-size: 16px; /* Change this value to adjust the text size */
+      font-weight: 500; /* Optional: Make the text bolder */
+      text-transform: capitalize; /* Optional: Capitalize the text */
+
+      /* Adjust padding for larger text */
+      padding: 8px 16px;
+
+      /* Optional: Add hover effect */
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+      }
+    }
+    .menu-wrapper {
+      position: relative;
+    }
+
+    mat-menu-item {
+      font-size: 16px;
+      padding: 8px 16px;
+      color: #3f51b5;
+
+      &:hover {
+        background-color: rgba(63, 81, 181, 0.1);
+      }
+    }
+  }
+}
+
+.item-1{
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #fa8058;
+
+  .breadcrumb-container {
+
+    padding: 8px 16px;
+    color: white;
+  }
+
+  .breadcrumb-item {
+    display: inline;
+  }
+
+  .breadcrumb-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 10px;
+    font-size: 16px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumb-separator {
+    color: white; // White for the separator
+    margin: 0 4px;
+  }
+
+  .current {
+    color: white; // White for the current page text
+    font-weight: normal;
+  }
+  .text{
+    font-size: 24px;
+    color: white;
+    margin-left: 30px;
+    margin-top:10px;
+  }
+
+}
+.item-2{
+  grid-column: 1;
+  grid-row: 3;
+  //background-image: url("/images/MyImages/Brown.jpg") ;
+  background-color: #fed39f;
+
+  .text{
+    color: black;
+    font-size: 20px;
+  }
+}

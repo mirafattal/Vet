@@ -1,0 +1,10 @@
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+.vertical-container{
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 16px; /* Add spacing between fields (optional) */
+  width: 300px;
+}

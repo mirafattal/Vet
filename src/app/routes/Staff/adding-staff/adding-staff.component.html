@@ -1,0 +1,44 @@
+<mat-dialog-content>
+      <form #StaffForm="ngForm">
+        <ng-template>Fill Staff</ng-template>
+        <div class="vertical-container">
+
+          <mat-form-field>
+            <mat-label>Staff Full Name</mat-label>
+            <input matInput [(ngModel)]="staffwithRole.fullName" name="fullName" required />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Staff Phone Number</mat-label>
+            <input matInput [(ngModel)]="staffwithRole.phone" name="phone" required />
+          </mat-form-field>
+
+          <!-- <mat-form-field>
+            <mat-label>Owner Birth Date</mat-label>
+            <input matInput [matDatepicker]="ownerBirthDatePicker"
+                   [(ngModel)]="animalowner.ownerBirthDate" name="ownerBirthDate" required />
+            <mat-datepicker-toggle matIconSuffix [for]="ownerBirthDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #ownerBirthDatePicker></mat-datepicker>
+          </mat-form-field> -->
+
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput [(ngModel)]="staffwithRole.address" name="address" required />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Staff Role</mat-label>
+            <mat-select name="staffRole" [(ngModel)]="staffwithRole.staffRoleId" required>
+              <mat-option [value]="staffRole">None</mat-option>
+              <ng-container *ngFor="let staffRole of staffRoles">
+                <mat-option [value]="staffRole.staffRoleId">{{ staffRole.roleName }}</mat-option>
+              </ng-container>
+            </mat-select>
+          </mat-form-field>
+         </div>
+          <div>
+            <button mat-button (click)="onCancel()">Cancel</button>
+            <button mat-button (click)="onSubmit()" [disabled]="!StaffForm.valid">Submit</button>
+        </div>
+      </form>
+  </mat-dialog-content>

@@ -1,0 +1,72 @@
+<mat-stepper #stepper>
+
+  <!-- Step 1: Fill out owner details -->
+  <mat-step>
+    <form #ownerForm="ngForm">
+      <ng-template matStepLabel>Fill out owner details</ng-template>
+      <div class="vertical-container">
+
+        <mat-form-field>
+          <mat-label>Diagnosis</mat-label>
+          <input matInput [(ngModel)]="medical.diagnosis" name="fullName" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Treatment</mat-label>
+          <input matInput [(ngModel)]="medical.treatment" name="phone" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Choose Today's Date</mat-label>
+          <input matInput [matDatepicker]="ownerBirthDatePicker"
+                 [(ngModel)]="medical.createdAt" name="ownerBirthDate" required />
+          <mat-datepicker-toggle matIconSuffix [for]="ownerBirthDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #ownerBirthDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Surgery Details</mat-label>
+          <input matInput [(ngModel)]="medical.surgeryDetails" name="surgery" required />
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious (click)="onCancel()">Cancel</button>
+          <button mat-button matStepperNext [disabled]="!ownerForm.valid">Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Step 2: Fill out animal details -->
+  <mat-step>
+    <form #animalForm="ngForm">
+      <ng-template matStepLabel>Fill out animal details</ng-template>
+      <div class="vertical-container">
+
+        <mat-form-field>
+          <mat-label>Prescribed Medication</mat-label>
+          <input matInput [(ngModel)]="medical.prescribedMedication" name="medication" required />
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>Select Doctor</mat-label>
+          <mat-select name="staffId" [(ngModel)]="medical.staffId" required>
+            <mat-option [value]="null">None</mat-option>
+            <ng-container *ngFor="let doctor of doctorNames">
+              <mat-option [value]="doctor.staffId">
+                {{ doctor.fullName }}
+              </mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="onSubmit()" [disabled]="!animalForm.valid">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+
+</mat-stepper>
