@@ -1,0 +1,69 @@
+<div class="item item-0">
+  <mat-toolbar color="primary" class="toolbar">
+    <div class="logo-container">
+      <img src="/images/MyImages/Logo2.png" alt="Logo" class="logo-image" />
+      <span class="logo-title">Dr PawPaw</span>
+    </div>
+
+    <!-- Spacer to push menu items to the right -->
+    <span class="spacer"></span>
+
+    <!-- Services Button -->
+    <div
+class="menu-wrapper">
+<button mat-button [matMenuTriggerFor]="PetservicesMenu" #PetservicesTrigger="matMenuTrigger">
+  Pet Services <mat-icon>keyboard_arrow_down</mat-icon>
+</button>
+<mat-menu #PetservicesMenu="matMenu" class="hover-menu">
+  <button mat-menu-item>Dog Training</button>
+  <button mat-menu-item>Dental Care</button>
+  <button mat-menu-item>Vaccination</button>
+  <button mat-menu-item (click)="onSurgeryDetails()">Surgery</button>
+  <button mat-menu-item>Grooming</button>
+  </mat-menu>
+</div>
+
+<div class="menu-wrapper">
+<button mat-button [matMenuTriggerFor]="EquineservicesMenu" #EquineservicesTrigger="matMenuTrigger">
+  Equine Services <mat-icon>keyboard_arrow_down</mat-icon>
+</button>
+</div>
+
+<div class="menu-wrapper">
+<button mat-button [matMenuTriggerFor]="PetAdoptionMenu" #PetservicesTrigger="matMenuTrigger">
+  Pet Adoption <mat-icon>keyboard_arrow_down</mat-icon>
+</button>
+<mat-menu #PetAdoptionMenu="matMenu" class="hover-menu">
+  <button mat-menu-item>Adoption Details</button>
+  <button mat-menu-item (click)="onAdoptNow()">Adopt now</button>
+  </mat-menu>
+</div>
+
+
+<!-- About Us Menu -->
+<div
+class="menu-wrapper">
+<button mat-button [matMenuTriggerFor]="aboutUsMenu" #aboutUsTrigger="matMenuTrigger">
+  About Us <mat-icon>keyboard_arrow_down</mat-icon>
+</button>
+</div>
+
+     <!-- Menus -->
+
+
+    <mat-menu #EquineservicesMenu="matMenu">
+      <button mat-menu-item>Internal Medicine</button>
+      <button mat-menu-item>Diagnostics</button>
+      <button mat-menu-item>Lab Testing & Screening</button>
+      <button mat-menu-item>Horse Training</button>
+      <button mat-menu-item>Wellness & Preventative Care</button>
+    </mat-menu>
+
+    <mat-menu #aboutUsMenu="matMenu" class="hover-menu">
+    <button mat-menu-item>Our Team</button>
+    <button mat-menu-item>Contact</button>
+    </mat-menu>
+
+
+  </mat-toolbar>
+</div>

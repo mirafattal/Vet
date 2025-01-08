@@ -63,7 +63,7 @@ constructor(private apiService: APIClient, public dialogRef: MatDialogRef<Adding
 
 
       // Call backend service to add the owner and animal
-      this.apiService.add4(this.inventory).subscribe({
+      this.apiService.add8(this.inventory).subscribe({
         next: (response) => {
           console.log('Response from backend:', response);
             alert('Item added successfully!');

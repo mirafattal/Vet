@@ -59,7 +59,7 @@ export class AddingStaffComponent implements OnInit{
 
     ngOnInit(): void {
       // Get all animal types from the backend
-      this.apiService.getAll9().subscribe((response: StaffRoleDtoIEnumerableApiResponse) => {
+      this.apiService.getAll14().subscribe((response: StaffRoleDtoIEnumerableApiResponse) => {
         this.staffRoles = response.data ?? [];
       });
     }
@@ -81,7 +81,7 @@ export class AddingStaffComponent implements OnInit{
 
 
       // Call backend service to add the owner and animal
-      this.apiService.add8(this.staffwithRole).subscribe({
+      this.apiService.add13(this.staffwithRole).subscribe({
         next: (response) => {
           console.log('Response from backend:', response);
             alert('staff added successfully!');

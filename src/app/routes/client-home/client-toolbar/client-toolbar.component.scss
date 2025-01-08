@@ -1,0 +1,65 @@
+.item-0{
+  grid-column: 1/5;
+  grid-row: 1;
+  .toolbar {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #6643b5;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 90px;
+
+    /* Logo Styling */
+    .logo-container {
+      display: flex;
+      align-items: center;
+
+      .logo-image {
+        width: 80px; /* Adjust the size of your logo */
+        height: 80px; /* Adjust the size of your logo */
+        margin-right: 8px; /* Add spacing between the image and the title */
+      }
+
+      .logo-title {
+        font-size: 26px;
+        font-weight: 10px;
+        color: black;
+      }
+    }
+
+    .spacer {
+      flex: 1; /* Pushes menu items to the right */
+    }
+
+    button {
+      background-color: #6643b5;
+      font-size: 16px; /* Change this value to adjust the text size */
+      font-weight: 500; /* Optional: Make the text bolder */
+      text-transform: capitalize; /* Optional: Capitalize the text */
+
+      /* Adjust padding for larger text */
+      padding: 8px 16px;
+
+      /* Optional: Add hover effect */
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+      }
+    }
+    .menu-wrapper {
+      position: relative;
+    }
+
+    mat-menu-item {
+      font-size: 16px;
+      padding: 8px 16px;
+      color: #3f51b5;
+
+      &:hover {
+        background-color: rgba(63, 81, 181, 0.1);
+      }
+    }
+  }
+}

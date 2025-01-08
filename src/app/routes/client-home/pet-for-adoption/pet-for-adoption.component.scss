@@ -1,0 +1,139 @@
+.container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 90px 150px 800px;
+
+}
+.item-0{
+  grid-column: 1;
+  grid-row: 1;
+
+}
+
+.item-1{
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #6643b5;
+
+  .breadcrumb-container {
+
+    padding: 8px 16px;
+    color: white;
+
+  }
+
+  .breadcrumb-item {
+    display: inline;
+  }
+
+  .breadcrumb-link {
+    background-color: #6643b5;
+    color: white;
+    text-decoration: none;
+    font-weight: 10px;
+    font-size: 16px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumb-separator {
+    color: white; // White for the separator
+    margin: 0 4px;
+  }
+
+  .current {
+    color: white; // White for the current page text
+    font-weight: normal;
+  }
+  .text{
+    font-size: 24px;
+    color: white;
+    margin-left: 30px;
+    margin-top:10px;
+  }
+
+}
+
+
+.item-2 {
+  grid-row: 3;
+  display: grid;
+  background-color: #926de9;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
+
+  .pet-card {
+    margin: 20px;
+    max-width: 320px;
+    border-radius: 8px;
+
+      mat-card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+
+        mat-card-content {
+          padding: 16px;
+
+          .pet-info {
+            text-align: center;
+
+            h3 {
+              font-size: 1.5em;
+              margin: 0;
+              color: #926de9; /* Primary color */
+              text-transform: capitalize;
+            }
+
+            p {
+              font-size: 0.9em;
+              color: #535353; /* Muted text color */
+              margin: 4px 0;
+            }
+          }
+        }
+      mat-card-actions {
+        padding: 16px;
+        display: flex;
+        justify-content: flex-end;
+/* CSS */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+      }
+    }
+  }
+
+  .pet-image {
+    width: 100%; /* Makes the image take up the full width of its container */
+    height: auto; /* Maintains the aspect ratio */
+    max-width: 320px; /* Optional: Sets a maximum width for the image */
+    max-height: 200px; /* Optional: Limits the height of the image */
+    object-fit: cover; /* Ensures the image scales properly within the dimensions */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+  }
+}
+
+

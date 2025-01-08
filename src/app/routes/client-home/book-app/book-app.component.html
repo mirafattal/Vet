@@ -1,0 +1,75 @@
+<body>
+  <div class="container">
+    <div class="item item-0">
+      <app-client-toolbar></app-client-toolbar>
+    </div>
+
+    <div class="item item-1">
+      <div class="breadcrumb-container mat-elevation-z2">
+        <nav>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/client-home')" class="breadcrumb-link">Home</button>
+          </span>
+          <span class="breadcrumb-separator"> / </span>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/book-appointment')" class="breadcrumb-link current">Appointment</button>
+          </span>
+        </nav>
+      </div>
+      <div class="text">Book Appointment</div>
+    </div>
+
+    <div class="item item-2">
+      <div class="appointment-container">
+
+        <!-- Form Section -->
+        <div *ngIf="!showConfirmationMessage">
+          <h2>Book an Appointment</h2>
+
+          <div>
+            <label for="doctor">Select Doctor:</label>
+            <mat-select [(ngModel)]="selectedDoctorId" (selectionChange)="onDoctorChange($event.value)">
+              <mat-option *ngFor="let doctor of doctorNames" [value]="doctor.staffId">
+                {{ doctor.fullName }} , ({{ doctor.roleName }})
+              </mat-option>
+            </mat-select>
+          </div>
+
+          <div *ngIf="availableDates.length > 0">
+            <label for="date">Select Date:</label>
+            <mat-select [(ngModel)]="selectedDate" (selectionChange)="onDateChange($event.value)">
+              <mat-option *ngFor="let date of availableDates" [value]="date">
+                {{ date | date: 'EEEE, MMMM d, yyyy' }}
+              </mat-option>
+            </mat-select>
+          </div>
+
+          <div *ngIf="availableTimes.length > 0">
+            <label for="time">Select Time:</label>
+            <mat-select [(ngModel)]="selectedTime" (selectionChange)="onTimeChange($event.value)">
+              <mat-option *ngFor="let time of availableTimes" [value]="time">
+                {{ time }}
+              </mat-option>
+            </mat-select>
+          </div>
+
+          <div>
+            <label for="reason">Appointment Reason:</label>
+            <div>
+              <textarea [(ngModel)]="appointmentReason" placeholder="Please provide a reason for
+              your appointment" rows="4" class="appointment-textarea"></textarea>
+            </div>
+          </div>
+
+          <button mat-button (click)="submitAppointment()">Book Appointment</button>
+        </div>
+
+        <!-- Confirmation Message Section -->
+        <div *ngIf="showConfirmationMessage" class="confirmation-message">
+          <h2>Appointment Confirmed</h2>
+          <p>{{ appointmentDetails }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

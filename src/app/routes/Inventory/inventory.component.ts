@@ -54,14 +54,14 @@ export class InventoryComponent implements OnInit {
        }
 
         fetchData(){
-        this.apiService.getAll4().subscribe(
+        this.apiService.getAll8().subscribe(
           (response) => {
           this.inventory = response.data ?? []; // Directly replace with the API response
           this.dataSource.data = this.inventory;
           console.log('Inventory Details:', this.inventory);
                 },
         (error) => {
-        console.error('Error fetching owner details', error);
+        console.error('Error fetching inventory details', error);
          }
        );
     }
@@ -89,7 +89,7 @@ export class InventoryComponent implements OnInit {
           }
 
           // Call the backend service to delete the owner and animal
-          this.apiService.deleteById4(row.itemId).subscribe({
+          this.apiService.deleteById8(row.itemId).subscribe({
             next: (response) => {
               console.log('Delete successful:', response);
               // Update the UI (remove the row from the table, etc.)

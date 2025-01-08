@@ -84,12 +84,12 @@ export class AddingMedicalComponent implements OnInit {
     onSubmit() {
       this.medical;
 
-      this.medical.createdAt = new Date("2024-12-12");
+      this.medical.createdAt = new Date();
       this.medical.medicalRecordId = 0;
       this.medical.animalId = this.animalId;
       console.log('Submitting the following data:',this.medical);
       // Send the DTO to the backend
-      this.apiService.add6(this.medical).subscribe({
+      this.apiService.add10(this.medical).subscribe({
         next: (response) => {
           console.log('Response from backend:', response);
           alert('Medical Record added successfully!');

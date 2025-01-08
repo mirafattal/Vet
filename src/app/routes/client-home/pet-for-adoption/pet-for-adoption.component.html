@@ -1,0 +1,39 @@
+<body>
+  <div class="container">
+    <div class="item item-0">
+      <app-client-toolbar></app-client-toolbar>
+    </div>
+
+    <div class="item item-1">
+      <div class="breadcrumb-container mat-elevation-z2">
+        <nav>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/client-home')" class="breadcrumb-link">Home</button>
+          </span>
+          <span class="breadcrumb-separator"> / </span>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/pet-for-adoption')" class="breadcrumb-link current">Adoption</button>
+          </span>
+        </nav>
+      </div>
+
+
+    <div class="item item-2">
+      <div class="pet-card" *ngFor="let pet of pets">
+        <mat-card>
+          <img mat-card-image [src]="pet.imageUrl" alt="{{ pet.breed }}" class="pet-image" />
+          <mat-card-content>
+            <div class="pet-info">
+              <h3>{{ pet.breed }}</h3>
+              <p>Birth Date: {{ pet.petBirthDate | date: 'dd MMM yyyy' }}</p>
+              <p>Health: {{ pet.petCondition }}</p>
+              <p>Gender: {{ pet.gender }}</p>
+            </div>
+          </mat-card-content>
+          <mat-card-actions align="end" class="card-actions">
+           <button class="button-33" role="button" (click)="adoptPet(pet.petForAdoptionId)">Adopt</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    </div>

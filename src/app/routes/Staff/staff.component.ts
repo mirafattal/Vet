@@ -107,7 +107,7 @@ export class StaffComponent implements OnInit {
         }
 
         // Call the backend service to delete the owner and animal
-        this.apiService.deleteById8(row.ownerId).subscribe({
+        this.apiService.deleteById13(row.ownerId).subscribe({
           next: (response) => {
             console.log('Delete successful:', response);
             // Update the UI (remove the row from the table, etc.)

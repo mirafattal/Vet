@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule, MatMenu } from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,6 @@ import { Router } from '@angular/router';
     MatMenuModule,
     MatButtonModule
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './client-home.component.html',
   styleUrl: './client-home.component.scss'
 })
@@ -38,5 +37,13 @@ export class ClientHomeComponent {
   onSurgeryDetails() {
     // Navigate to the add pet route
     this.router.navigate(['surgery-home']); }
+
+  onAdoptNow() {
+    // Navigate to the add pet route
+    this.router.navigate(['pet-for-adoption']); }
+
+  onBookAppointment() {
+    this.router.navigate(['book-appointment']);
+  }
 
 }

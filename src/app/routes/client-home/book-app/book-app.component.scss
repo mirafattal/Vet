@@ -1,0 +1,148 @@
+.container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 90px 150px 800px;
+
+}
+.item-0{
+  grid-column: 1;
+  grid-row: 1;
+
+}
+
+.item-1{
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #6643b5;
+
+  .breadcrumb-container {
+
+    padding: 8px 16px;
+    color: white;
+  }
+
+  .breadcrumb-item {
+    display: inline;
+  }
+
+  .breadcrumb-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 10px;
+    font-size: 16px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumb-separator {
+    color: white; // White for the separator
+    margin: 0 4px;
+  }
+
+  .current {
+    color: white; // White for the current page text
+    font-weight: normal;
+  }
+  .text{
+    font-size: 24px;
+    color: white;
+    margin-left: 30px;
+    margin-top:10px;
+  }
+
+}
+
+.item-2{
+  background-color: #926de9;
+  grid-column: 1;
+  grid-row: 3;
+.appointment-container {
+
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: beige;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+mat-select {
+  width: 50%;
+  margin-top: 10px;
+}
+
+mat-option {
+  font-size: 16px;
+}
+
+label {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #45a049;
+  }
+}
+
+mat-form-field {
+  display: block;
+  width: 300%;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+
+mat-select {
+  .mat-select-trigger {
+    font-size: 16px;
+  }
+}
+
+mat-option {
+  font-size: 16px;
+  padding: 10px;
+}
+}
+.appointment-textarea {
+  width: 400px;  // Adjust to desired width
+  max-width: 500px;  // Optional: limit the maximum width
+}
+
+.confirmation-message {
+  text-align: center;
+  margin-top: 50px;
+
+  h2 {
+    color: #4caf50; // Green for success
+  }
+
+  p {
+    font-size: 18px;
+    color: #333;
+  }
+}
+
+}

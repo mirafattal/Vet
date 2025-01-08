@@ -14,13 +14,18 @@
 
         <mat-form-field>
           <mat-label>Owner Phone Number</mat-label>
-          <input matInput [(ngModel)]="animalowner.phone" name="phone" required />
+          <input matInput [(ngModel)]="animalowner.phone" name="phone" required/>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Owner Email</mat-label>
+          <input matInput [(ngModel)]="animalowner.ownerEmail" name="email" required />
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Owner Birth Date</mat-label>
           <input matInput [matDatepicker]="ownerBirthDatePicker"
-                 [(ngModel)]="animalowner.ownerBirthDate" name="ownerBirthDate" required />
+                 [(ngModel)]="animalowner.ownerBirthDate" name="ownerBirthDate"required/>
           <mat-datepicker-toggle matIconSuffix [for]="ownerBirthDatePicker"></mat-datepicker-toggle>
           <mat-datepicker #ownerBirthDatePicker></mat-datepicker>
         </mat-form-field>

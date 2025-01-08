@@ -15,7 +15,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: 	#fe8761;
+    background-color: 	#6643b5;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     height: 90px;
 
@@ -42,7 +42,7 @@
     }
 
     button {
-      background-color:	#fe8761;
+      background-color:	#6643b5;
       font-size: 16px; /* Change this value to adjust the text size */
       font-weight: 500; /* Optional: Make the text bolder */
       text-transform: capitalize; /* Optional: Capitalize the text */
@@ -90,16 +90,18 @@
     transform: translate(-50%, -50%);
     text-align: center; /* Center align the text */
     z-index: 2;
-    color: white; /* White text for contrast */
+
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
 
     .title {
       font-size: 50px; /* Larger font size for the title */
       font-weight: bold; /* Emphasize the title */
       margin-bottom: 10px; /* Space between title and subtitle */
+      color: #53186b; /* White text for contrast */
     }
 
     .subtitle {
+      color: white;
       font-size: 20px; /* Slightly smaller font size for the subtitle */
       font-weight: normal; /* Regular weight for the subtitle */
       margin-bottom: 20px; /* Space between subtitle and button */
@@ -118,7 +120,7 @@
     font-size: 20px; /* Adjust font size */
     font-weight: bold; /* Make the text stand out */
     color: white; /* Text color */
-    background-color: #fe8761; /* Button background color */
+    background-color: #53186b; /* Button background color */
     border: none; /* Remove default border */
     border-radius: 8px; /* Add rounded corners */
     cursor: pointer; /* Show a pointer when hovered */
@@ -127,7 +129,7 @@
 
     /* Hover effect */
     &:hover {
-      background-color: #fa7a4f; /* Slightly darker background on hover */
+      background-color: #430f58; /* Slightly darker background on hover */
       transform: translate(-50%, -50%) scale(1.05); /* Slight scale-up for hover effect */
       box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4); /* More pronounced shadow on hover */
     }
@@ -142,7 +144,7 @@
 .item-2{
   grid-column: 1/5;
   grid-row: 3;
-  background-color:	#fe8761;
+  background-color:	#6643b5;
   background-size: cover;
   display: flex; /* Keeps the position intact */
   align-items: center;
@@ -186,7 +188,7 @@
 grid-column: 1/5;
 grid-row: 4;
 
-background-color:	#fe8761;
+background-color:	#6643b5;
 background-size: cover;
 background-position: center;
 display: flex; /* Enables Flexbox */
@@ -206,7 +208,7 @@ align-items: center; /* Vertically center buttons */
     display: inline-block;
     width: 100px; /* Fixed width */
     height: 28px; /* Fixed height */
-    background-color:	#fe8761; /* Add a background color */
+    background-color:	#8594e4; /* Add a background color */
     color: white;
     text-align: center;
     border-radius: 3px; /* Optional: Add rounded corners */
@@ -226,7 +228,7 @@ align-items: center; /* Vertically center buttons */
     display: inline-block;
     width: 100px; /* Fixed width */
     height: 28px; /* Fixed height */
-    background-color: #fe8761; /* Add a background color */
+    background-color: #8594e4; /* Add a background color */
     color: white;
     text-align: center;
     border-radius: 3px; /* Optional: Add rounded corners */
@@ -247,7 +249,7 @@ align-items: center; /* Vertically center buttons */
     display: inline-block;
     width: 100px; /* Fixed width */
     height: 28px; /* Fixed height */
-    background-color: #fe8761; /* Add a background color */
+    background-color: #8594e4; /* Add a background color */
     color: white;
     text-align: center;
     border-radius: 3px; /* Optional: Add rounded corners */
@@ -268,7 +270,7 @@ align-items: center; /* Vertically center buttons */
     display: inline-block;
     width: 100px; /* Fixed width */
     height: 28px; /* Fixed height */
-    background-color: #fe8761; /* Add a background color */
+    background-color: #8594e4; /* Add a background color */
     color: white;
     text-align: center;
     border-radius: 3px; /* Optional: Add rounded corners */
@@ -281,7 +283,7 @@ align-items: center; /* Vertically center buttons */
 .item-4{
   grid-column: 1/5;
   grid-row: 5;
-  background-color: #f6eec9;
+  background-color: #d5def5;
   .image-box {
     display: block; // Default block-level container, ensuring full width
     position: relative; // This helps with any relative positioning of child elements

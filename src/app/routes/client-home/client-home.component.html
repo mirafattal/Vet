@@ -31,6 +31,17 @@
     </button>
   </div>
 
+  <div class="menu-wrapper">
+    <button mat-button [matMenuTriggerFor]="PetAdoptionMenu" #PetservicesTrigger="matMenuTrigger">
+      Pet Adoption <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #PetAdoptionMenu="matMenu" class="hover-menu">
+      <button mat-menu-item>Adoption Details</button>
+      <button mat-menu-item (click)="onAdoptNow()">Adopt now</button>
+      </mat-menu>
+    </div>
+
+
   <!-- About Us Menu -->
   <div
     class="menu-wrapper">
@@ -62,7 +73,7 @@
     <div class="item item-1">
       <!-- Background Image -->
       <div class="background-container">
-        <img src="images/MyImages/file.webp" alt="Example Image">
+        <img src="images/MyImages/ClientHomeBack.webp" alt="Example Image">
       </div>
 
       <!-- Centered Text -->
@@ -71,12 +82,12 @@
         <h2 class="subtitle">We prioritize your animal’s health and wellness</h2>
       </div>
       <div>
-        <button class="background-button">Book Appointment</button></div>
+        <button class="background-button" (click)="onBookAppointment()">Book Appointment</button></div>
     </div>
 
     <div class="item item-2">
       <div class="text-2">Schedule Your Next Visit Now</div>
-      <div><button class="button-2">Book Appointment</button></div>
+      <div><button class="button-2" (click)="onBookAppointment()">Book Appointment</button></div>
     </div>
 
     <div class="item item-3">

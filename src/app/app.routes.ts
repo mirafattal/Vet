@@ -18,7 +18,11 @@ import { AddingPetComponent } from './routes/pet/adding-pet/adding-pet.component
 import { SurgeryHomeComponent } from './routes/client-home/surgery-home/surgery-home.component';
 import { AddingMedicalComponent } from './routes/pet/adding-medical/adding-medical.component';
 import { StaffComponent } from './routes/Staff/staff.component';
-import { MyLoginComponent } from './routes/my-login/my-login.component';
+import { HorseComponent } from './routes/horse/horse.component';
+import { AddHorseComponent } from './routes/horse/add-horse/add-horse.component';
+import { AdoptionQuestionnaireComponent } from './routes/client-home/adoption-questionnaire/adoption-questionnaire.component';
+import { BookAppComponent } from './routes/client-home/book-app/book-app.component';
+import { PetForAdoptionComponent } from './routes/client-home/pet-for-adoption/pet-for-adoption.component';
 
 
 
@@ -45,6 +49,11 @@ export const routes: Routes = [
       { path: 'surgery-home', component: SurgeryHomeComponent},
       { path: 'add-medical', component: AddingMedicalComponent},
       { path: 'pet-detail/:id', component: PetDetailComponent },
+      { path: 'horse', component: HorseComponent},
+      { path: 'add-horse', component: AddHorseComponent},
+      { path: 'adoption-questionnaire', component: AdoptionQuestionnaireComponent},
+      { path: 'book-appointment', component: BookAppComponent},
+      { path: 'pet-for-adoption', component: PetForAdoptionComponent},
 
 
       {

@@ -20,15 +20,10 @@ import { AddOwnerAndAnimalDto, AnimalDto, AnimalTypeDto, AnimalTypeDtoIEnumerabl
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 
+
 @Component({
-  selector: 'app-adding-pet',
+  selector: 'app-add-horse',
   standalone: true,
-  providers: [
-    {
-      provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: {displayDefaultIndicatorType: false},
-    },
-  ],
   imports: [
     MatDialogModule,
     MatSelectModule,
@@ -43,18 +38,17 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatOptionModule,
     MatDatepickerModule
   ],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './adding-pet.component.html',
-  styleUrl: './adding-pet.component.scss'
+  templateUrl: './add-horse.component.html',
+  styleUrls: ['./add-horse.component.scss']
 })
-export class AddingPetComponent implements OnInit {
+export class AddHorseComponent implements OnInit {
   animal: AnimalDto = new AnimalDto();
   animalowner: AddOwnerAndAnimalDto = new AddOwnerAndAnimalDto();
 
   owners: OwnerDto[] = [];
   selectedOwnerName: string | null | undefined = null; // Display name for the selected owner
   selectedOwnerId: number | undefined; // Currently selected owner's ID
-  //formDisabled: boolean = false;  // To disable other form fields if owner is selected
+  formDisabled: boolean = false;  // To disable other form fields if owner is selected
 
   loadOwnerNames(): void {
     this.apiService.getAllOwnerNames().subscribe(
@@ -70,7 +64,7 @@ export class AddingPetComponent implements OnInit {
   private _formBuilder = inject(FormBuilder);
 
 
-  constructor(private apiService: APIClient, public dialogRef: MatDialogRef<AddingPetComponent>) {}
+  constructor(private apiService: APIClient, public dialogRef: MatDialogRef<AddHorseComponent>) {}
 
   readonly range = new FormGroup({
     start: new FormControl<Date | null>(null),
@@ -89,10 +83,10 @@ export class AddingPetComponent implements OnInit {
   }
 
 // Method to handle when an owner is selected
-// onOwnerSelected() {
-//   // Check if an owner is selected
-//   this.formDisabled = this.selectedOwnerId !== null;
-// }
+onOwnerSelected() {
+  // Check if an owner is selected
+  this.formDisabled = this.selectedOwnerId !== null;
+}
 
 AddanimalOnly: AnimalDto = new AnimalDto();
 
@@ -140,5 +134,9 @@ AddanimalOnly: AnimalDto = new AnimalDto();
 
   onCancel(): void {
     this.dialogRef.close(); // Close the dialog
+    this.selectedOwnerId = 0;
+    this.selectedOwnerName = '';
+    this.formDisabled = false;
   }
 }
+

@@ -11,7 +11,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AddingPetComponent } from './adding-pet/adding-pet.component';
-import { AnimalDto, APIClient, OwnerDto } from '@shared/services/api-client/veterinary-api.service';
+import { AnimalDto, APIClient, OwnerDto, OwnerDtoIEnumerableApiResponse } from '@shared/services/api-client/veterinary-api.service';
 import { DrawerPosition, MtxDrawer, MtxDrawerRef } from '@ng-matero/extensions/drawer';
 import { PetDetailComponent } from './pet-detail/pet-detail.component';
 
@@ -39,6 +39,7 @@ export class PetComponent implements OnInit {
     displayedColumns = ['OwnerName', 'AnimalName', 'Species', 'Breed', 'actions'];
     dataSource = new MatTableDataSource<any>([]); // Initialize with an empty array
     animalId: number | null = null;
+    animalTypeId = 1;
 
     position: DrawerPosition = 'right';
     width = '900px';
@@ -83,43 +84,48 @@ export class PetComponent implements OnInit {
         console.log('Animal ID:', this.animalId);
 
         // Fetch data after the animalId is set
-        this.fetchData();
+        this.fetchData(this.animalTypeId);
       });
     }
 
-      fetchData(): void {
-        forkJoin({
-          animals: this.apiService.getAll(),
-          owners: this.apiService.getAll7(),
-        }).subscribe(
-          ({ animals, owners }: any) => {
-            console.log('Animals Response:', animals);
-            console.log('Owners Response:', owners);
+      fetchData(animalTypeId: number): void {
+              console.log('Fetching data for animalTypeId:', animalTypeId);
 
-            const animalList = animals.data; // Extract animals array
-            const ownerList = owners.data; // Extract owners array
+              forkJoin({
+                animals: this.apiService.getbyAnimalTypeId(animalTypeId), // Fetch animals by animalTypeId
+                owners: this.apiService.getAll11(), // Fetch all owners
+              }).subscribe(
+                ({ animals, owners }: { animals: AnimalDto[]; owners: OwnerDtoIEnumerableApiResponse }) => {
+                  console.log('Animals Response:', animals);
+                  console.log('Owners Response:', owners);
 
-            if (animalList && ownerList) {
-              this.dataSource.data = animalList.map((animal: any) => {
-                const owner = ownerList.find((o: any) => o.ownerId === animal.ownerId);
-                return {
-                  animalId: animal.animalId,
-                  animalName: animal.animalName,
-                  species: animal.species,
-                  breed: animal.breed,
-                  fullName: owner ? owner.fullName : 'Unknown',
-                  ownerId: owner ? owner.ownerId : null,  // Ensure ownerId is included
-                };
-              });
+                  const animalList = animals || []; // Since animals is an array
+                  const ownerList = owners?.data || []; // Owners might still have a `data` property
 
-              console.log('Combined Data:', this.dataSource.data);
+                  if (animalList.length > 0 && ownerList.length > 0) {
+                    this.dataSource.data = animalList.map((animal) => {
+                      const owner = ownerList.find((o: any) => o.ownerId === animal.ownerId);
+                      return {
+                        animalId: animal.animalId,
+                        animalName: animal.animalName,
+                        animalTypeId: animal.animalTypeId,
+                        species: animal.species,
+                        breed: animal.breed,
+                        fullName: owner ? owner.fullName : 'Unknown',
+                        ownerId: owner ? owner.ownerId : null, // Ensure ownerId is included
+                      };
+                    });
+                  } else {
+                    console.warn('No animals or owners data available.');
+                    this.dataSource.data = [];
+                  }
+                },
+                (error) => {
+                  console.error('Error fetching data:', error);
+                  this.dataSource.data = []; // Reset data source in case of error
+                }
+              );
             }
-          },
-          (error) => {
-            console.error('Error fetching data:', error);
-          }
-        );
-      }
 
     applyFilter(event: Event): void {
       const filterValue = (event.target as HTMLInputElement).value;

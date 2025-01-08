@@ -1,0 +1,93 @@
+<body>
+  <div class="container">
+    <div class="item item-0">
+      <app-client-toolbar></app-client-toolbar>
+    </div>
+
+    <div class="item item-1">
+      <div class="breadcrumb-container mat-elevation-z2">
+        <nav>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/client-home')" class="breadcrumb-link">Home</button>
+          </span>
+          <span class="breadcrumb-separator"> / </span>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/pet-for-adoption')" class="breadcrumb-link">Adopt Now</button>
+          </span>
+          <span class="breadcrumb-separator"> / </span>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/adoption-questionnaire')" class="breadcrumb-link current">
+              Adoption Questionnaire</button>
+          </span>
+        </nav>
+      </div>
+    </div>
+
+    <div class="item item-2">
+      <mat-card class="adoption-card">
+        <div class="row">
+          <!-- Left Card for Form Fields -->
+          <mat-card class="left-card" fxFlex="50%">
+            <mat-card-header class="leftheader">Adoption Questionnaire</mat-card-header>
+            <!-- Occupation Field -->
+            <mat-form-field>
+              <mat-label>Your Occupation</mat-label>
+              <input matInput [(ngModel)]="adoption.occupation" name="ownerOccupation" required />
+            </mat-form-field>
+
+            <!-- Salary Field -->
+            <mat-form-field>
+              <mat-label>Your Salary</mat-label>
+              <input matInput [(ngModel)]="adoption.salary" name="salary" type="number" required />
+            </mat-form-field>
+
+            <!-- Is Married -->
+            <div class="checkbox-group">
+              <p>Are you married?</p>
+              <mat-radio-group [(ngModel)]="adoption.isMarried">
+                <mat-radio-button [value]="true">Yes</mat-radio-button>
+                <mat-radio-button [value]="false">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+            <!-- Has Owned Pet Before -->
+            <div class="checkbox-group">
+              <p>Have you owned a pet before?</p>
+              <mat-radio-group [(ngModel)]="adoption.hasOwnedPetBefore">
+                <mat-radio-button [value]="true">Yes</mat-radio-button>
+                <mat-radio-button [value]="false">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+            <!-- Are All Adults Aware -->
+            <div class="checkbox-group">
+              <p>Are all adults in your household aware of the adoption?</p>
+              <mat-radio-group [(ngModel)]="adoption.isHouseholdAware">
+                <mat-radio-button [value]="true">Yes</mat-radio-button>
+                <mat-radio-button [value]="false">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+            <!-- Reason for Adoption -->
+            <mat-form-field>
+              <mat-label>Reason for Adoption</mat-label>
+              <textarea
+                matInput
+                [(ngModel)]="adoption.reasonForAdoption"
+                name="reasonForAdoption"
+                rows="3"
+                required
+              ></textarea>
+            </mat-form-field>
+
+            <!-- Submit Button -->
+            <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+          </mat-card>
+
+          <!-- Right Card for Image -->
+          <mat-card class="right-card" fxFlex="50%">
+            <img src="images/MyImages/Adoption2.webp" alt="Pet Image" class="pet-image" />
+          </mat-card>
+        </div>
+      </mat-card>
+    </div>

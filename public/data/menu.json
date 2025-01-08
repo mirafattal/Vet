@@ -47,6 +47,12 @@
       "icon": "pets"
     },
     {
+      "route": "horse",
+      "name": "horse",
+      "type": "link",
+      "icon": "pages"
+    },
+    {
       "route": "inventory",
       "name": "inventory",
       "type": "link",

@@ -1,0 +1,90 @@
+.container{
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 90px 160px 1fr;
+}
+
+.item-0{
+  grid-column: 1/2;
+  grid-row: 1;
+}
+.item-1{
+  grid-column: 1/2;
+  grid-row: 2;
+  background-color: #6643b5;
+
+  .breadcrumb-container {
+
+    padding: 8px 16px;
+    color: white;
+  }
+
+  .breadcrumb-item {
+    display: inline;
+  }
+
+  .breadcrumb-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 10px;
+    font-size: 16px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumb-separator {
+    color: white; // White for the separator
+    margin: 0 4px;
+  }
+
+  .current {
+    color: white; // White for the current page text
+    font-weight: normal;
+  }
+  .text{
+    font-size: 24px;
+    color: white;
+    margin-left: 30px;
+    margin-top:10px;
+  }
+
+}
+
+
+.item-2{
+grid-column: 1/2;
+grid-row: 3;
+.adoption-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #6643b5;
+  width: 100%;
+  border-radius: 0;
+}
+.leftheader{
+  font-size: 25px;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+.left-card{
+ padding: 5px;
+ margin-left: 200px;
+ margin-top: 10px;
+ border-radius: 0;
+ background-color: #d5def5;
+ width: 500px;
+}
+.right-card{
+
+  margin-top: 10px;
+  border-radius: 0;
+  background-color: #d5def5;
+}
+
+.pet-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+}
+
