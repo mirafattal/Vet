@@ -1,0 +1,54 @@
+<body>
+  <div class="container">
+    <div class="item item-0">
+      <app-client-toolbar></app-client-toolbar>
+    </div>
+
+    <div class="item item-1">
+      <div class="breadcrumb-container mat-elevation-z2">
+        <nav>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/client-home')" class="breadcrumb-link">Home</button>
+          </span>
+          <span class="breadcrumb-separator"> / </span>
+          <span class="breadcrumb-item">
+            <button mat-button (click)="navigateTo('/dog-training-home')" class="breadcrumb-link current">Dog Training</button>
+          </span>
+        </nav>
+      </div>
+      <div class="text">Dog Training</div>
+    </div>
+
+    <div class="item item-2">
+      <div class="dog-training-section">
+       <div class="text-and-image">
+        <div class="dog-training-text">
+      <h2>{{ dogTrainingDetails.title }}</h2>
+      <p *ngFor="let paragraph of dogTrainingDetails.paragraphs">{{ paragraph }}</p>
+    </div>
+    <div class="dog-training-image">
+      <img src="images/MyImages/DogTraining.webp" alt="Dog Training">
+    </div>
+  </div>
+
+  <div class="additional-details">
+    <h3>{{ dogTrainingDetails.subtitle1 }}</h3>
+    <p *ngFor="let paragraph of dogTrainingDetails.additionalDetails1">{{ paragraph }}</p>
+
+    <h3>{{ dogTrainingDetails.subtitle2 }}</h3>
+    <p *ngFor="let paragraph of dogTrainingDetails.additionalDetails2">{{ paragraph }}</p>
+
+    <h3>{{ dogTrainingDetails.subtitle3 }}</h3>
+    <p>{{ dogTrainingDetails.closingParagraph }}</p>
+    <p class="contactInfo">{{ dogTrainingDetails.contact }}</p>
+  </div>
+
+  <div class="book-appointment">
+    <button>{{ dogTrainingDetails.bookAppointmentText }}</button>
+  </div>
+</div>
+</div>
+
+</div>
+</body>
+

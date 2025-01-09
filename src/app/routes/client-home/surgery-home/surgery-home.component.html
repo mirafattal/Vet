@@ -1,61 +1,7 @@
 <body>
   <div class="container">
     <div class="item item-0">
-      <mat-toolbar color="primary" class="toolbar">
-        <div class="logo-container">
-          <img src="/images/MyImages/Logo2.png" alt="Logo" class="logo-image" />
-          <span class="logo-title">Dr PawPaw</span>
-        </div>
-
-        <!-- Spacer to push menu items to the right -->
-        <span class="spacer"></span>
-
-        <!-- Services Button -->
-        <div
-    class="menu-wrapper">
-    <button mat-button [matMenuTriggerFor]="PetservicesMenu" #PetservicesTrigger="matMenuTrigger">
-      Pet Services <mat-icon>keyboard_arrow_down</mat-icon>
-    </button>
-    <mat-menu #PetservicesMenu="matMenu" class="hover-menu">
-      <button mat-menu-item>Dog Training</button>
-      <button mat-menu-item>Dental Care</button>
-      <button mat-menu-item>Vaccination</button>
-      <button mat-menu-item>Surgery</button>
-      <button mat-menu-item>Grooming</button>
-      </mat-menu>
-  </div>
-
-<div class="menu-wrapper">
-    <button mat-button [matMenuTriggerFor]="EquineservicesMenu" #EquineservicesTrigger="matMenuTrigger">
-      Equine Services <mat-icon>keyboard_arrow_down</mat-icon>
-    </button>
-  </div>
-
-  <!-- About Us Menu -->
-  <div
-    class="menu-wrapper">
-    <button mat-button [matMenuTriggerFor]="aboutUsMenu" #aboutUsTrigger="matMenuTrigger">
-      About Us <mat-icon>keyboard_arrow_down</mat-icon>
-    </button>
-  </div>
-
-         <!-- Menus -->
-
-
-        <mat-menu #EquineservicesMenu="matMenu">
-          <button mat-menu-item>Internal Medicine</button>
-          <button mat-menu-item>Diagnostics</button>
-          <button mat-menu-item>Lab Testing & Screening</button>
-          <button mat-menu-item>Horse Training</button>
-          <button mat-menu-item>Wellness & Preventative Care</button>
-        </mat-menu>
-
-        <mat-menu #aboutUsMenu="matMenu" class="hover-menu">
-        <button mat-menu-item>Our Team</button>
-        <button mat-menu-item>Contact</button>
-        </mat-menu>
-
-      </mat-toolbar>
+      <app-client-toolbar></app-client-toolbar>
     </div>
 
     <div class="item item-1">
@@ -74,11 +20,39 @@
     </div>
 
     <div class="item item-2">
-      <div class="text">
-        {{longText}}
+      <div class="surgery-section">
+        <div class="text-and-image">
+          <div class="surgery-text">
+            <h2>{{ surgeryDetails.title }}</h2>
+            <p *ngFor="let paragraph of surgeryDetails.paragraphs">{{ paragraph }}</p>
+          </div>
+          <div class="surgery-image">
+            <img src="images/MyImages/ClientSurgery.webp" alt="Cat in surgery">
+          </div>
+        </div>
+
+        <div class="additional-details">
+          <div>
+          <h3>{{ surgeryDetails.subtitle1 }}</h3>
+          <p *ngFor="let paragraph of surgeryDetails.additionalDetails1">{{ paragraph }}</p>
+        </div>
+
+        <div>
+          <h3>{{ surgeryDetails.subtitle2 }}</h3>
+          <p *ngFor="let paragraph of surgeryDetails.additionalDetails2">{{ paragraph }}</p>
+        </div>
+
+        <div>
+          <h3>{{ surgeryDetails.subtitle3 }}</h3>
+          <p *ngFor="let paragraph of surgeryDetails.additionalDetails3">{{ paragraph }}</p>
+          </div>
+
+          <h3>{{ surgeryDetails.subtitle4 }}</h3>
+          <p>{{ surgeryDetails.closingParagraph }}</p>
+          <p class="contactInfo">{{ surgeryDetails.contact }}</p>
+        </div>
       </div>
     </div>
-
 
    </div>
   </body>

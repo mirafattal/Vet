@@ -29,6 +29,14 @@ export class ClientToolbarComponent implements OnInit {
     // Navigate to the add pet route
     this.router.navigate(['pet-for-adoption']); }
 
+  onDogTraining() {
+    // Navigate to the add pet route
+    this.router.navigate(['dog-training-home']); }
+
+  onDentalCare() {
+    // Navigate to the add pet route
+    this.router.navigate(['dental-care-home']); }
+
   constructor(private router: Router) { }
 
   ngOnInit() {

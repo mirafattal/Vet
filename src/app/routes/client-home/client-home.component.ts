@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './client-home.component.html',
   styleUrl: './client-home.component.scss'
@@ -44,6 +44,14 @@ export class ClientHomeComponent {
 
   onBookAppointment() {
     this.router.navigate(['book-appointment']);
+  }
+
+  onDogTraining() {
+    this.router.navigate(['dog-training-home']);
+  }
+
+  onDentalCare() {
+    this.router.navigate(['dental-care-home']);
   }
 
 }

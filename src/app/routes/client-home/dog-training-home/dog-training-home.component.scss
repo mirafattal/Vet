@@ -6,6 +6,7 @@
 .item-0{
   grid-column: 1;
   grid-row: 1;
+
 }
 
 .item-1{
@@ -50,17 +51,12 @@
   }
 
 }
+
 .item-2{
   grid-column: 1;
   grid-row: 3;
   background-color: #d5def5;
-
-  .text{
-    color: black;
-    font-size: 20px;
-  }
-
-  .surgery-section {
+  .dog-training-section {
     margin: 2rem;
     font-family: Arial, sans-serif;
 
@@ -69,7 +65,7 @@
       justify-content: space-between;
       align-items: flex-start;
 
-      .surgery-text {
+      .dog-training-text {
         flex: 2;
         padding-right: 1.5rem;
 
@@ -85,7 +81,7 @@
         }
       }
 
-      .surgery-image {
+      .dog-training-image {
         flex: 1;
 
         img {
@@ -108,6 +104,26 @@
       p {
         line-height: 1.6;
         margin-bottom: 1rem;
+      }
+    }
+
+    .book-appointment {
+      margin-top: 2rem;
+      text-align: center;
+
+      button {
+        background-color: #4682B4; /* Light Blue */
+        color: #fff;
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #87CEEB; /* Slightly darker blue */
+        }
       }
     }
   }

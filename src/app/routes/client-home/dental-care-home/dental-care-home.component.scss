@@ -1,7 +1,7 @@
 .container{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 90px 150px 1fr;
+  grid-template-rows: 90px 100px 1fr;
 }
 .item-0{
   grid-column: 1;
@@ -28,6 +28,7 @@
     text-decoration: none;
     font-weight: 10px;
     font-size: 16px;
+    background-color: #d5def5;
     &:hover {
       text-decoration: underline;
     }
@@ -41,6 +42,7 @@
   .current {
     color: black; // White for the current page text
     font-weight: normal;
+    background-color: #d5def5;
   }
   .text{
     font-size: 24px;
@@ -55,13 +57,8 @@
   grid-row: 3;
   background-color: #d5def5;
 
-  .text{
-    color: black;
-    font-size: 20px;
-  }
-
-  .surgery-section {
-    margin: 2rem;
+  .dental-care-section {
+    margin: 1.5rem;
     font-family: Arial, sans-serif;
 
     .text-and-image {
@@ -69,13 +66,13 @@
       justify-content: space-between;
       align-items: flex-start;
 
-      .surgery-text {
+      .dental-care-text {
         flex: 2;
         padding-right: 1.5rem;
 
         h2 {
           font-size: 2rem;
-          color: #4682B4;
+          color: #4682B4; /* Sea Green */
           margin-bottom: 1rem;
         }
 
@@ -85,7 +82,7 @@
         }
       }
 
-      .surgery-image {
+      .dental-care-image {
         flex: 1;
 
         img {
@@ -101,13 +98,33 @@
 
       h3 {
         font-size: 1.5rem;
-        color: #4682B4;
+        color: #4682B4; /* Sea Green */
         margin-top: 1.5rem;
       }
 
       p {
         line-height: 1.6;
         margin-bottom: 1rem;
+      }
+    }
+
+    .book-appointment {
+      margin-top: 2rem;
+      text-align: center;
+
+      button {
+        background-color: #4682B4; /* Light Blue */
+        color: #fff;
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #87CEEB; /* Slightly darker blue */
+        }
       }
     }
   }

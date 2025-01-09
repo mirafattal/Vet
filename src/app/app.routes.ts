@@ -23,6 +23,8 @@ import { AddHorseComponent } from './routes/horse/add-horse/add-horse.component'
 import { AdoptionQuestionnaireComponent } from './routes/client-home/adoption-questionnaire/adoption-questionnaire.component';
 import { BookAppComponent } from './routes/client-home/book-app/book-app.component';
 import { PetForAdoptionComponent } from './routes/client-home/pet-for-adoption/pet-for-adoption.component';
+import { DogTrainingHomeComponent } from './routes/client-home/dog-training-home/dog-training-home.component';
+import { DentalCareHomeComponent } from './routes/client-home/dental-care-home/dental-care-home.component';
 
 
 
@@ -54,6 +56,8 @@ export const routes: Routes = [
       { path: 'adoption-questionnaire', component: AdoptionQuestionnaireComponent},
       { path: 'book-appointment', component: BookAppComponent},
       { path: 'pet-for-adoption', component: PetForAdoptionComponent},
+      { path: 'dog-training-home', component: DogTrainingHomeComponent},
+      { path: 'dental-care-home', component: DentalCareHomeComponent},
 
 
       {

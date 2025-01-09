@@ -13,12 +13,12 @@
 .item-1{
   grid-column: 1;
   grid-row: 2;
-  background-color: #6643b5;
+  background-color: #d5def5;
 
   .breadcrumb-container {
 
     padding: 8px 16px;
-    color: white;
+    color: black;
   }
 
   .breadcrumb-item {
@@ -26,7 +26,7 @@
   }
 
   .breadcrumb-link {
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: 10px;
     font-size: 16px;
@@ -36,17 +36,17 @@
   }
 
   .breadcrumb-separator {
-    color: white; // White for the separator
+    color: black; // White for the separator
     margin: 0 4px;
   }
 
   .current {
-    color: white; // White for the current page text
+    color: black; // White for the current page text
     font-weight: normal;
   }
   .text{
     font-size: 24px;
-    color: white;
+    color: black;
     margin-left: 30px;
     margin-top:10px;
   }
@@ -54,7 +54,7 @@
 }
 
 .item-2{
-  background-color: #926de9;
+  background-color: #d5def5;
   grid-column: 1;
   grid-row: 3;
 .appointment-container {

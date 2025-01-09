@@ -17,8 +17,8 @@
       Pet Services <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
     <mat-menu #PetservicesMenu="matMenu" class="hover-menu">
-      <button mat-menu-item>Dog Training</button>
-      <button mat-menu-item>Dental Care</button>
+      <button mat-menu-item (click)="onDogTraining()">Dog Training</button>
+      <button mat-menu-item (click)="onDentalCare()">Dental Care</button>
       <button mat-menu-item>Vaccination</button>
       <button mat-menu-item (click)="onSurgeryDetails()">Surgery</button>
       <button mat-menu-item>Grooming</button>
@@ -109,59 +109,65 @@
     </div>
 
     <div class="item item-4">
+      <div class="TEXT">
       <h3 class="text-4">
         Welcome to Dr. PawPaw Center
       </h3>
       <div class="welcome-text">{{WelcomeText}}</div>
+    </div>
       <div class="image-box">
-        <img src="/images/MyImages/Equine.webp" alt="Vet clinic image">
+        <img src="/images/MyImages/Dental.webp" alt="Vet clinic image">
       </div>
     </div>
 
-    <div class="item item-5">How can we Help you?
-      <mat-card class="example-card" appearance="outlined">
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Medium</mat-card-subtitle>
-            <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-          </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
+    <div class="item item-5">
+      <div class="button-grid">
+        <!-- Button 1 -->
+        <button class="transparent-button">
+          <div>
+            <p class="head">Contact us</p>
+            <p>
+              If you have any questions, call or email us and our staff will respond
+              as soon as possible!
+            </p>
+            <a href="/contact" class="link">Connect with us</a>
+          </div>
+        </button>
 
-        </mat-card-content>
-      </mat-card>
-    </div>
+        <!-- Button 2 -->
+        <button class="transparent-button">
+          <div>
+            <p class="head">Adoption Info</p>
+            <p>
+              Learn more about our adoption process and find the perfect companion!
+            </p>
+            <a href="/adoption-info" class="link">Learn More</a>
+          </div>
+        </button>
 
-    <div class="item item-6">Book an appointment
-      <mat-card class="example-card" appearance="outlined">
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Medium</mat-card-subtitle>
-            <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-          </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
-          {{longText}}
-        </mat-card-content>
-      </mat-card>
-    </div>
+        <!-- Button 3 -->
+        <button class="transparent-button">
+          <div>
+            <p class="head">Wellness & Care Checkups</p>
+            <p>
+              Learn about all of the services that we provide to patients at our veterinary center.
+            </p>
+            <a href="/volunteer" class="link">Learn More</a>
+          </div>
+        </button>
 
-    <div class="item item-7">Contact us
-      <mat-card class="example-card" appearance="outlined">
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Medium</mat-card-subtitle>
-            <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-          </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
-          {{longText}}
-        </mat-card-content>
-      </mat-card>
-    </div>
+        <!-- Button 4 -->
+        <button class="transparent-button" (click)="onBookAppointment()">
+          <div>
+            <p class="head">Book An Appointment</p>
+            <p>
+              Schedule a convenient appointment with our office now. We can’t wait to meet you!
+            </p>
+            <a href="/book-appointment" class="link">Book Appoitment Now</a>
+          </div>
+        </button>
+      </div>
+      </div>
 
     <div class="item item-8"> Our Team
       <mat-card class="example-card" appearance="outlined">

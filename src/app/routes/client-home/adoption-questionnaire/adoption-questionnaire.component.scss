@@ -10,12 +10,12 @@
 .item-1{
   grid-column: 1/2;
   grid-row: 2;
-  background-color: #6643b5;
+  background-color: #d5def5;
 
   .breadcrumb-container {
 
     padding: 8px 16px;
-    color: white;
+    color: black;
   }
 
   .breadcrumb-item {
@@ -23,7 +23,7 @@
   }
 
   .breadcrumb-link {
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: 10px;
     font-size: 16px;
@@ -33,17 +33,17 @@
   }
 
   .breadcrumb-separator {
-    color: white; // White for the separator
+    color: black; // White for the separator
     margin: 0 4px;
   }
 
   .current {
-    color: white; // White for the current page text
+    color: black; // White for the current page text
     font-weight: normal;
   }
   .text{
     font-size: 24px;
-    color: white;
+    color: black;
     margin-left: 30px;
     margin-top:10px;
   }
@@ -57,7 +57,7 @@ grid-row: 3;
 .adoption-card {
   display: flex;
   justify-content: space-between;
-  background-color: #6643b5;
+  background-color: #d5def5;
   width: 100%;
   border-radius: 0;
 }

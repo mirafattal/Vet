@@ -15,8 +15,8 @@ class="menu-wrapper">
   Pet Services <mat-icon>keyboard_arrow_down</mat-icon>
 </button>
 <mat-menu #PetservicesMenu="matMenu" class="hover-menu">
-  <button mat-menu-item>Dog Training</button>
-  <button mat-menu-item>Dental Care</button>
+  <button mat-menu-item (click)="onDogTraining()">Dog Training</button>
+  <button mat-menu-item (click)="onDentalCare()">Dental Care</button>
   <button mat-menu-item>Vaccination</button>
   <button mat-menu-item (click)="onSurgeryDetails()">Surgery</button>
   <button mat-menu-item>Grooming</button>
