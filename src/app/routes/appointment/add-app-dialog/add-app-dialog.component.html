@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Add Appointment</h2>
+<mat-dialog-content>
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>Pet Name</mat-label>
+      <input matInput type="text" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Owner Name</mat-label>
+      <input matInput type="text" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Appointment Time</mat-label>
+      <input matInput type="datetime-local" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button color="primary" mat-dialog-close>Save</button>
+</mat-dialog-actions>

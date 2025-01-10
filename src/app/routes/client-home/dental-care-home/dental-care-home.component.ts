@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ClientToolbarComponent } from '../client-toolbar/client-toolbar.component';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-dental-care-home',
   standalone: true,
   imports: [
     ClientToolbarComponent,
-    CommonModule
+    CommonModule,
+    MatIconModule
   ],
   templateUrl: './dental-care-home.component.html',
   styleUrls: ['./dental-care-home.component.scss']
@@ -46,6 +48,6 @@ export class DentalCareHomeComponent implements OnInit {
     subtitle3: 'Book Your Pet’s Dental Appointment Today!',
     closingParagraph: 'Dental health is just as important for pets as it is for humans. Don’t wait until your pet shows signs of discomfort—schedule their dental check-up now. A little preventative care goes a long way in ensuring their happiness and health.',
     contact: 'For more information on our dental care services, call us at 800-462-8749 or email info@drpawpawcenter.com.',
-    bookAppointmentText: 'Book Appointment'
+    bookAppointmentText: 'Book Appointment',
   };
 }

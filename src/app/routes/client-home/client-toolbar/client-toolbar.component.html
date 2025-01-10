@@ -17,9 +17,9 @@ class="menu-wrapper">
 <mat-menu #PetservicesMenu="matMenu" class="hover-menu">
   <button mat-menu-item (click)="onDogTraining()">Dog Training</button>
   <button mat-menu-item (click)="onDentalCare()">Dental Care</button>
-  <button mat-menu-item>Vaccination</button>
+  <button mat-menu-item (click)="onVaccineDetails()">Vaccination</button>
   <button mat-menu-item (click)="onSurgeryDetails()">Surgery</button>
-  <button mat-menu-item>Grooming</button>
+  <button mat-menu-item (click)="onGroomDetails()">Grooming</button>
   </mat-menu>
 </div>
 
@@ -34,7 +34,7 @@ class="menu-wrapper">
   Pet Adoption <mat-icon>keyboard_arrow_down</mat-icon>
 </button>
 <mat-menu #PetAdoptionMenu="matMenu" class="hover-menu">
-  <button mat-menu-item>Adoption Details</button>
+  <button mat-menu-item (click)="onAdoptionDetails()">Adoption Details</button>
   <button mat-menu-item (click)="onAdoptNow()">Adopt now</button>
   </mat-menu>
 </div>
@@ -52,7 +52,7 @@ class="menu-wrapper">
 
 
     <mat-menu #EquineservicesMenu="matMenu">
-      <button mat-menu-item>Internal Medicine</button>
+      <button mat-menu-item (click)="onInternalMedicine()">Internal Medicine</button>
       <button mat-menu-item>Diagnostics</button>
       <button mat-menu-item>Lab Testing & Screening</button>
       <button mat-menu-item>Horse Training</button>
@@ -60,7 +60,7 @@ class="menu-wrapper">
     </mat-menu>
 
     <mat-menu #aboutUsMenu="matMenu" class="hover-menu">
-    <button mat-menu-item>Our Team</button>
+    <button mat-menu-item (click)="gotoOurTeam()">Our Team</button>
     <button mat-menu-item>Contact</button>
     </mat-menu>
 

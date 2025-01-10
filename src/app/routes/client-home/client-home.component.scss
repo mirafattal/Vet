@@ -1,7 +1,7 @@
 .container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 90px 800px 250px 450px 500px 700px 400px 250px 250px;
+  grid-template-rows: 90px 800px 250px 450px 500px 700px 400px 400px 600px;
   column-gap: 30px;
 
 }
@@ -335,6 +335,7 @@ align-items: center; /* Vertically center buttons */
 .item-5{
   grid-column: 1/5;
   grid-row: 6;
+  background-color: #d5def5;
   .button-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two buttons per row */
@@ -393,13 +394,239 @@ align-items: center; /* Vertically center buttons */
 .item-8{
   grid-column: 1/5;
   grid-row: 7;
+  background-color: #d5def5;
+
+  .meet-the-team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+
+    .horizontal-card {
+      display: flex;
+      flex-direction: row; /* Horizontal layout */
+      width: 100%; /* Full width */
+      max-width: 800px; /* Limit card size */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.02); /* Slight zoom on hover */
+      }
+
+      .card-content {
+        display: flex;
+        flex-direction: row; /* Content in rows */
+        align-items: center;
+      }
+
+      img {
+        width: 40%; /* Image takes 40% of the card width */
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px 0 0 4px; /* Rounded corners for the left side */
+      }
+
+      .text-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        mat-card-title {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: #6643b5; /* Sea-green */
+          margin-bottom: 0.5rem;
+        }
+
+        mat-card-subtitle {
+          font-size: 1rem;
+          color: #666;
+          margin-bottom: 1rem;
+        }
+
+        mat-card-content {
+          font-size: 1rem;
+          color: #555;
+          margin-bottom: 1rem;
+        }
+
+        mat-card-actions {
+          margin-top: 1rem;
+
+          button {
+            font-weight: bold;
+            padding: 0.5rem 1.5rem;
+            color: #6643b5;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .horizontal-card {
+        flex-direction: column; /* Stack layout on smaller screens */
+        img {
+          width: 100%;
+          border-radius: 4px 4px 0 0; /* Rounded top corners for stacked layout */
+        }
+        .text-content {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+
 }
+
 .item-9{
   grid-column: 1/5;
   grid-row: 8;
+  background-color: #6643b5;
+
+
+  .office-hours {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #6643b5;
+   // border: 1px solid #ddd;
+    text-align: center;
+
+    h3 {
+      font-size: 1.5rem;
+      color: #333; /* Sea Green */
+      margin-bottom: 1rem;
+    }
+
+    .hours-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Adjusts for smaller screens */
+
+      .day-time {
+        font-size: 1rem;
+        color: #333;
+        text-align: center;
+        margin: 0 0.5rem;
+        flex: 1; /* Equal space for each day */
+        word-break: break-word;
+
+        span {
+          font-size: 0.9rem;
+          color: #333;
+        }
+      }
+
+      .divider {
+        height: 30px;
+        width: 1px;
+        background-color: #ddd;
+      }
+
+      .day-time:last-child + .divider {
+        display: none; /* Hide divider after the last day */
+      }
+    }
+  }
+
+  .footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    //border-top: 1px solid #ddd;
+
+    .logo {
+      flex: 1;
+      img {
+        max-height: 100px; /* Adjust as needed */
+        width: 100px;
+      }
+    }
+
+    .social-icons {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      a {
+        display: inline-block;
+        img {
+          width: 30px;
+          height: 30px; /* Adjust icon size */
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+          }
+        }
+      }
+    }
+
+    .contact-info {
+      flex: 1;
+      text-align: right;
+      font-size: 1rem;
+      color: #333;
+
+      a {
+        text-decoration: none;
+        color: #333; /* Sea Green */
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+
+      .logo,
+      .social-icons,
+      .contact-info {
+        flex: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+
 }
 .item-10{
   grid-column: 1/5;
   grid-row: 9;
+  background-color: #d5def5;
+
+  .location-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1:2 ratio for the card and map */
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+    margin-top: 40px;
+
+    .address-card {
+      width: 80%; /* You can adjust this as needed */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container {
+      width: 100%;
+      height: 450px;
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+
 }
 

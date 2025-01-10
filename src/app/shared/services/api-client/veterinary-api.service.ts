@@ -2026,6 +2026,192 @@ export class APIClient {
     /**
      * @return OK
      */
+    getAnimalAndAppoinThisWeek(): Observable<AppoiAnimalNameDto[]> {
+        let url_ = this.baseUrl + "/api/Appointment/GetAnimalAndAppoinThisWeek";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetAnimalAndAppoinThisWeek(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetAnimalAndAppoinThisWeek(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<AppoiAnimalNameDto[]>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<AppoiAnimalNameDto[]>;
+        }));
+    }
+
+    protected processGetAnimalAndAppoinThisWeek(response: HttpResponseBase): Observable<AppoiAnimalNameDto[]> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            if (Array.isArray(resultData200)) {
+                result200 = [] as any;
+                for (let item of resultData200)
+                    result200!.push(AppoiAnimalNameDto.fromJS(item));
+            }
+            else {
+                result200 = <any>null;
+            }
+            return _observableOf(result200);
+            }));
+        } else if (status === 500) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("Internal Server Error", status, _responseText, _headers);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf(null as any);
+    }
+
+    /**
+     * @return OK
+     */
+    getAnimalAndAppoinThisMonth(): Observable<AppoiAnimalNameDto[]> {
+        let url_ = this.baseUrl + "/api/Appointment/GetAnimalAndAppoinThisMonth";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetAnimalAndAppoinThisMonth(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetAnimalAndAppoinThisMonth(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<AppoiAnimalNameDto[]>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<AppoiAnimalNameDto[]>;
+        }));
+    }
+
+    protected processGetAnimalAndAppoinThisMonth(response: HttpResponseBase): Observable<AppoiAnimalNameDto[]> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            if (Array.isArray(resultData200)) {
+                result200 = [] as any;
+                for (let item of resultData200)
+                    result200!.push(AppoiAnimalNameDto.fromJS(item));
+            }
+            else {
+                result200 = <any>null;
+            }
+            return _observableOf(result200);
+            }));
+        } else if (status === 500) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("Internal Server Error", status, _responseText, _headers);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf(null as any);
+    }
+
+    /**
+     * @return OK
+     */
+    getAnimalAndAppoinNextMonth(): Observable<AppoiAnimalNameDto[]> {
+        let url_ = this.baseUrl + "/api/Appointment/GetAnimalAndAppoinNextMonth";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetAnimalAndAppoinNextMonth(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetAnimalAndAppoinNextMonth(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<AppoiAnimalNameDto[]>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<AppoiAnimalNameDto[]>;
+        }));
+    }
+
+    protected processGetAnimalAndAppoinNextMonth(response: HttpResponseBase): Observable<AppoiAnimalNameDto[]> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            if (Array.isArray(resultData200)) {
+                result200 = [] as any;
+                for (let item of resultData200)
+                    result200!.push(AppoiAnimalNameDto.fromJS(item));
+            }
+            else {
+                result200 = <any>null;
+            }
+            return _observableOf(result200);
+            }));
+        } else if (status === 500) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("Internal Server Error", status, _responseText, _headers);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf(null as any);
+    }
+
+    /**
+     * @return OK
+     */
     getAll5(): Observable<AppointmentDtoIEnumerableApiResponse> {
         let url_ = this.baseUrl + "/api/Appointment/GetAll";
         url_ = url_.replace(/[?&]$/, "");
@@ -8381,6 +8567,70 @@ export interface IAnimalTypeDtoIEnumerableApiResponse {
     data?: AnimalTypeDto[] | null;
     message?: string | null;
     errorMessage?: string | null;
+}
+
+export class AppoiAnimalNameDto implements IAppoiAnimalNameDto {
+    appointmentId?: number;
+    staffId?: number;
+    appointmentDate?: Date;
+    animalName?: string | null;
+    fullName?: string | null;
+    appointmentReason?: string | null;
+    doctorSlotId?: number;
+    slotStartTime?: string;
+
+    constructor(data?: IAppoiAnimalNameDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.appointmentId = _data["appointmentId"] !== undefined ? _data["appointmentId"] : <any>null;
+            this.staffId = _data["staffId"] !== undefined ? _data["staffId"] : <any>null;
+            this.appointmentDate = _data["appointmentDate"] ? new Date(_data["appointmentDate"].toString()) : <any>null;
+            this.animalName = _data["animalName"] !== undefined ? _data["animalName"] : <any>null;
+            this.fullName = _data["fullName"] !== undefined ? _data["fullName"] : <any>null;
+            this.appointmentReason = _data["appointmentReason"] !== undefined ? _data["appointmentReason"] : <any>null;
+            this.doctorSlotId = _data["doctorSlotId"] !== undefined ? _data["doctorSlotId"] : <any>null;
+            this.slotStartTime = _data["slotStartTime"] !== undefined ? _data["slotStartTime"] : <any>null;
+        }
+    }
+
+    static fromJS(data: any): AppoiAnimalNameDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new AppoiAnimalNameDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["appointmentId"] = this.appointmentId !== undefined ? this.appointmentId : <any>null;
+        data["staffId"] = this.staffId !== undefined ? this.staffId : <any>null;
+        data["appointmentDate"] = this.appointmentDate ? this.appointmentDate.toISOString() : <any>null;
+        data["animalName"] = this.animalName !== undefined ? this.animalName : <any>null;
+        data["fullName"] = this.fullName !== undefined ? this.fullName : <any>null;
+        data["appointmentReason"] = this.appointmentReason !== undefined ? this.appointmentReason : <any>null;
+        data["doctorSlotId"] = this.doctorSlotId !== undefined ? this.doctorSlotId : <any>null;
+        data["slotStartTime"] = this.slotStartTime !== undefined ? this.slotStartTime : <any>null;
+        return data;
+    }
+}
+
+export interface IAppoiAnimalNameDto {
+    appointmentId?: number;
+    staffId?: number;
+    appointmentDate?: Date;
+    animalName?: string | null;
+    fullName?: string | null;
+    appointmentReason?: string | null;
+    doctorSlotId?: number;
+    slotStartTime?: string;
 }
 
 export class Appointment implements IAppointment {

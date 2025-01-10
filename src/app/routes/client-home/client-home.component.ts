@@ -54,4 +54,24 @@ export class ClientHomeComponent {
     this.router.navigate(['dental-care-home']);
   }
 
+  onAdoptionDetails() {
+    this.router.navigate(['adoption-details']);
+  }
+
+  goToTeamPage(): void {
+    this.router.navigate(['team-home']); // Replace '/team' with your actual route for the team page
+  }
+
+  onVaccineDetails() {
+    // Navigate to the add pet route
+    this.router.navigate(['vaccine-details']); }
+
+  onGroomDetails() {
+   // Navigate to the add pet route
+    this.router.navigate(['groom-details']); }
+
+  onInternalMedicine(){
+    this.router.navigate(['internal-medicine']);
+  }
+
 }

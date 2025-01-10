@@ -56,82 +56,24 @@
   grid-column: 1;
   grid-row: 3;
   background-color: #d5def5;
+  .team-page-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem;
 
-  .dental-care-section {
-    margin: 1.5rem;
-    font-family: Arial, sans-serif;
+    .team-card {
+      transition: transform 0.3s ease-in-out;
 
-    .text-and-image {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-
-      .dental-care-text {
-        flex: 2;
-        padding-right: 1.5rem;
-
-        h2 {
-          font-size: 2rem;
-          color: #4682B4; /* Sea Green */
-          margin-bottom: 1rem;
-        }
-
-        p {
-          line-height: 1.6;
-          margin-bottom: 1rem;
-        }
+      &:hover {
+        transform: scale(1.05);
       }
 
-      .dental-care-image {
-        flex: 1;
-
-        img {
-          width: 100%;
-          height: auto;
-          border-radius: 10px;
-        }
+      img {
+        height: 200px;
+        object-fit: cover;
       }
     }
-
-    .additional-details {
-      margin-top: 2rem;
-
-      h3 {
-        font-size: 1.5rem;
-        color: #4682B4; /* Sea Green */
-        margin-top: 1.5rem;
-      }
-
-      p {
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
-    }
-
-    .book-appointment {
-      margin-top: 2rem;
-      text-align: center;
-
-      button {
-        background-color: #4682B4; /* Light Blue */
-        color: #fff;
-        padding: 0.75rem 2rem;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: #87CEEB; /* Slightly darker blue */
-        }
-      }
-    }
-  }
-
-  .contactInfo{
-    color: #4682B4;
-    font-size: 26px;
   }
 
   .office-hours {
@@ -247,3 +189,5 @@
 
 
 }
+
+

@@ -19,9 +19,9 @@
     <mat-menu #PetservicesMenu="matMenu" class="hover-menu">
       <button mat-menu-item (click)="onDogTraining()">Dog Training</button>
       <button mat-menu-item (click)="onDentalCare()">Dental Care</button>
-      <button mat-menu-item>Vaccination</button>
+      <button mat-menu-item (click)="onVaccineDetails()">Vaccination</button>
       <button mat-menu-item (click)="onSurgeryDetails()">Surgery</button>
-      <button mat-menu-item>Grooming</button>
+      <button mat-menu-item (click)="onGroomDetails()">Grooming</button>
       </mat-menu>
   </div>
 
@@ -36,7 +36,7 @@
       Pet Adoption <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
     <mat-menu #PetAdoptionMenu="matMenu" class="hover-menu">
-      <button mat-menu-item>Adoption Details</button>
+      <button mat-menu-item (click)="onAdoptionDetails()">Adoption Details</button>
       <button mat-menu-item (click)="onAdoptNow()">Adopt now</button>
       </mat-menu>
     </div>
@@ -54,7 +54,7 @@
 
 
         <mat-menu #EquineservicesMenu="matMenu">
-          <button mat-menu-item>Internal Medicine</button>
+          <button mat-menu-item (click)="onInternalMedicine()">Internal Medicine</button>
           <button mat-menu-item>Diagnostics</button>
           <button mat-menu-item>Lab Testing & Screening</button>
           <button mat-menu-item>Horse Training</button>
@@ -62,7 +62,7 @@
         </mat-menu>
 
         <mat-menu #aboutUsMenu="matMenu" class="hover-menu">
-        <button mat-menu-item>Our Team</button>
+        <button mat-menu-item (click)="goToTeamPage()">Our Team</button>
         <button mat-menu-item>Contact</button>
         </mat-menu>
 
@@ -116,7 +116,7 @@
       <div class="welcome-text">{{WelcomeText}}</div>
     </div>
       <div class="image-box">
-        <img src="/images/MyImages/Dental.webp" alt="Vet clinic image">
+        <img src="/images/MyImages/welcome.webp" alt="Vet clinic image">
       </div>
     </div>
 
@@ -135,13 +135,13 @@
         </button>
 
         <!-- Button 2 -->
-        <button class="transparent-button">
+        <button class="transparent-button" (click)="onAdoptionDetails()">
           <div>
             <p class="head">Adoption Info</p>
             <p>
               Learn more about our adoption process and find the perfect companion!
             </p>
-            <a href="/adoption-info" class="link">Learn More</a>
+            <a href="/adoption-details" class="link">Learn More</a>
           </div>
         </button>
 
@@ -169,50 +169,95 @@
       </div>
       </div>
 
-    <div class="item item-8"> Our Team
-      <mat-card class="example-card" appearance="outlined">
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Medium</mat-card-subtitle>
-            <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-          </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
-          {{longText}}
-        </mat-card-content>
-      </mat-card>
+    <div class="item item-8">
+      <div class="meet-the-team-container">
+        <mat-card class="horizontal-card">
+          <div class="card-content">
+            <img mat-card-image src="images/MyImages/MeetTheTeam.webp" alt="Our Veterinary Team">
+            <div class="text-content">
+              <mat-card-title>Meet the Team</mat-card-title>
+              <mat-card-subtitle>Discover our skilled veterinary team</mat-card-subtitle>
+              <mat-card-content>
+                <p>
+                  Our dedicated team of veterinarians and staff is here to ensure the best care for your animals.
+                  Learn more about their expertise and passion for animal health.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="goToTeamPage()">Learn More</button>
+              </mat-card-actions>
+            </div>
+          </div>
+        </mat-card>
+      </div>
     </div>
 
-    <div class="item item-9">Office Hours
-      <mat-card class="example-card" appearance="outlined">
-        <mat-card-header>
-          <mat-card-title-group>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Medium</mat-card-subtitle>
-            <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-          </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
-          {{longText}}
-        </mat-card-content>
-      </mat-card>
+    <div class="item item-9">
+      <div class="office-hours">
+        <h3>Office Hours</h3>
+        <div class="hours-container">
+          <div class="day-time">Monday<br><span>9:00 am - 5:00 pm</span></div>
+          <div class="divider"></div>
+          <div class="day-time">Tuesday<br><span>9:00 am - 5:00 pm</span></div>
+          <div class="divider"></div>
+          <div class="day-time">Wednesday<br><span>9:00 am - 5:00 pm</span></div>
+          <div class="divider"></div>
+          <div class="day-time">Thursday<br><span>9:00 am - 5:00 pm</span></div>
+          <div class="divider"></div>
+          <div class="day-time">Friday<br><span>9:00 am - 5:00 pm</span></div>
+          <div class="divider"></div>
+          <div class="day-time">Saturday<br><span>9:00 am - 2:00 pm</span></div>
+          <div class="divider"></div>
+          <div class="day-time">Sunday<br><span>Closed</span></div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <div class="logo">
+          <img src="images/MyImages/Logo2.png" alt="Dr Pawpaw Center Logo" />
+        </div>
+        <div class="social-icons">
+          <a href="https://www.instagram.com" target="_blank">
+            <img src="images/MyImages/instagram.webp" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="images/MyImages/facebook.jpg" alt="Facebook" />
+          </a>
+        </div>
+        <div class="contact-info">
+          <span>Call Us: <a href="tel:800-462-8749">800-462-8749</a></span>
+        </div>
+      </div>
     </div>
 
 
-    <div class="item item-10">Location
-      <mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Medium</mat-card-subtitle>
-      <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    {{longText}}
-  </mat-card-content>
-</mat-card>
+    <div class="item item-10">
+      <div class="location-section">
+        <!-- Address Card -->
+        <mat-card class="address-card">
+          <mat-card-header>
+            <mat-card-title>Our Location</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Dr PawPaw Veterinary Clinic St, City, Country</p>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Map -->
+        <div class="map-container">
+          <iframe
+            width="600"
+            height="450"
+            src="https://www.google.com/maps/embed/v1/place?q=37.4220,-122.0841&key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao"
+            frameborder="0"
+            style="border:0;"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
     </div>
+
+
   </div>
 </body>

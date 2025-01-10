@@ -1,7 +1,7 @@
 .container{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 90px 150px 800px;
+  grid-template-rows: 90px 150px 800px 1fr;
 
 }
 .item-0{
@@ -134,6 +134,126 @@
     object-fit: cover; /* Ensures the image scales properly within the dimensions */
     border-radius: 8px; /* Optional: Adds rounded corners */
   }
+
+
+}
+
+.item-3{
+  grid-row: 4;
+  background-color: #d5def5;
+
+  .office-hours {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #4682B4;
+   // border: 1px solid #ddd;
+    text-align: center;
+
+    h3 {
+      font-size: 1.5rem;
+      color: #333; /* Sea Green */
+      margin-bottom: 1rem;
+    }
+
+    .hours-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Adjusts for smaller screens */
+
+      .day-time {
+        font-size: 1rem;
+        color: #333;
+        text-align: center;
+        margin: 0 0.5rem;
+        flex: 1; /* Equal space for each day */
+        word-break: break-word;
+
+        span {
+          font-size: 0.9rem;
+          color: #333;
+        }
+      }
+
+      .divider {
+        height: 30px;
+        width: 1px;
+        background-color: #ddd;
+      }
+
+      .day-time:last-child + .divider {
+        display: none; /* Hide divider after the last day */
+      }
+    }
+  }
+
+  .footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+
+    .logo {
+      flex: 1;
+      img {
+        max-height: 100px; /* Adjust as needed */
+        width: 100px;
+      }
+    }
+
+    .social-icons {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      a {
+        display: inline-block;
+        img {
+          width: 30px;
+          height: 30px; /* Adjust icon size */
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+          }
+        }
+      }
+    }
+
+    .contact-info {
+      flex: 1;
+      text-align: right;
+      font-size: 1rem;
+      color: #333;
+
+      a {
+        text-decoration: none;
+        color: #4682B4; /* Sea Green */
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+
+      .logo,
+      .social-icons,
+      .contact-info {
+        flex: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+
 }
 
 

@@ -25,6 +25,12 @@ import { BookAppComponent } from './routes/client-home/book-app/book-app.compone
 import { PetForAdoptionComponent } from './routes/client-home/pet-for-adoption/pet-for-adoption.component';
 import { DogTrainingHomeComponent } from './routes/client-home/dog-training-home/dog-training-home.component';
 import { DentalCareHomeComponent } from './routes/client-home/dental-care-home/dental-care-home.component';
+import { TeamHomeComponent } from './routes/client-home/team-home/team-home.component';
+import { AdoptionDetailsComponent } from './routes/client-home/adoption-details/adoption-details.component';
+import { VaccineDetailsComponent } from './routes/client-home/vaccine-details/vaccine-details.component';
+import { GroomDetailsComponent } from './routes/client-home/groom-details/groom-details.component';
+import { InternalMedicineComponent } from './routes/client-home/internal-medicine/internal-medicine.component';
+import { AppointmentComponent } from './routes/appointment/appointment.component';
 
 
 
@@ -58,6 +64,12 @@ export const routes: Routes = [
       { path: 'pet-for-adoption', component: PetForAdoptionComponent},
       { path: 'dog-training-home', component: DogTrainingHomeComponent},
       { path: 'dental-care-home', component: DentalCareHomeComponent},
+      { path: 'team-home', component: TeamHomeComponent},
+      { path: 'adoption-details', component: AdoptionDetailsComponent},
+      { path: 'vaccine-details', component: VaccineDetailsComponent},
+      { path: 'groom-details', component: GroomDetailsComponent},
+      { path: 'internal-medicine', component: InternalMedicineComponent},
+      { path: 'appointment', component: AppointmentComponent},
 
 
       {

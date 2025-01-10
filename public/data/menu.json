@@ -17,6 +17,12 @@
       "icon": "dashboard"
     },
     {
+      "route": "appointment",
+      "name": "appointment",
+      "type": "link",
+      "icon": "calendar_today"
+    },
+    {
       "route": "overview",
       "name": "overview",
       "type": "link",

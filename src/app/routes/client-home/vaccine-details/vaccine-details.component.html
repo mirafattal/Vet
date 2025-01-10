@@ -12,39 +12,39 @@
           </span>
           <span class="breadcrumb-separator"> / </span>
           <span class="breadcrumb-item">
-            <button mat-button (click)="navigateTo('/dental-care-home')" class="breadcrumb-link current">Dental Care</button>
+            <button mat-button (click)="navigateTo('/vaccine-details')" class="breadcrumb-link current">Vaccination</button>
           </span>
         </nav>
       </div>
-      <div class="text">Dental Care</div>
+      <div class="text">Vaccination Details</div>
     </div>
 
     <div class="item item-2">
       <div class="dental-care-section">
         <div class="text-and-image">
           <div class="dental-care-text">
-            <h2>{{ dentalCareDetails.title }}</h2>
-            <p *ngFor="let paragraph of dentalCareDetails.paragraphs">{{ paragraph }}</p>
+            <h2>{{ vaccinationDetails.title }}</h2>
+            <p *ngFor="let paragraph of vaccinationDetails.paragraphs">{{ paragraph }}</p>
           </div>
           <div class="dental-care-image">
-            <img src="images/MyImages/DentalCare.webp" alt="Pet Dental Care">
+            <img src="images/MyImages/VaccineDetails.webp" alt="Pet Dental Care">
           </div>
         </div>
 
         <div class="additional-details">
-          <h3>{{ dentalCareDetails.subtitle1 }}</h3>
-          <p *ngFor="let paragraph of dentalCareDetails.additionalDetails1">{{ paragraph }}</p>
+          <h3>{{ vaccinationDetails.subtitle1 }}</h3>
+          <p *ngFor="let paragraph of vaccinationDetails.additionalDetails1">{{ paragraph }}</p>
 
-          <h3>{{ dentalCareDetails.subtitle2 }}</h3>
-          <p *ngFor="let paragraph of dentalCareDetails.additionalDetails2">{{ paragraph }}</p>
+          <h3>{{ vaccinationDetails.subtitle2 }}</h3>
+          <p *ngFor="let paragraph of vaccinationDetails.additionalDetails2">{{ paragraph }}</p>
 
-          <h3>{{ dentalCareDetails.subtitle3 }}</h3>
-          <p>{{ dentalCareDetails.closingParagraph }}</p>
-          <p class="contactInfo">{{ dentalCareDetails.contact }}</p>
+          <h3>{{ vaccinationDetails.subtitle3 }}</h3>
+          <p>{{ vaccinationDetails.closingParagraph }}</p>
+          <p class="contactInfo">{{ vaccinationDetails.contact }}</p>
         </div>
 
         <div class="book-appointment">
-          <button>{{ dentalCareDetails.bookAppointmentText }}</button>
+          <button (click)="onBookNow()">{{ vaccinationDetails.bookAppointmentText }}</button>
         </div>
 
         <div class="office-hours">
