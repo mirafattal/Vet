@@ -50,7 +50,7 @@
     "@syncfusion/ej2-angular-buttons": "^28.1.33",
     "@syncfusion/ej2-angular-schedule": "^28.1.33",
     "angular-in-memory-web-api": "~0.18.0",
-    "apexcharts": "^3.54.0",
+    "apexcharts": "^4.4.0",
     "crypto-js": "^4.2.0",
     "d3": "^7.9.0",
     "d3-shape": "^3.2.0",
